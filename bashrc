@@ -26,8 +26,8 @@
 #export PILOTRATE=115200
 
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
 
 test -s ~/.alias && . ~/.alias || true
 
@@ -36,7 +36,7 @@ alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias lla='ls -a -l --color=auto'
 alias l.='ls -d .* --color=auto'
-alias rm='rm -iv'
+alias rm='rm -Iv'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -52,9 +52,9 @@ alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
-
 alias got='git '
 alias get='git '
+alias sshaws='ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-38-199-56.us-west-2.compute.amazonaws.com'
 
 # Locale and editor
 export EDITOR=vim

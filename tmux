@@ -9,10 +9,10 @@ set -g default-terminal "screen-256color"
 # set scrollback history to 30000 (30k)
 set -g history-limit 30000
 
-# set C-a as the default prefix key combination
+# set C-space as the default prefix key combination
 # and unbind C-b to free it up
-#unbind C-b
-#set -g prefix C-a
+unbind C-b
+set -g prefix C-space
 
 # use send-prefix to pass ` (tic) through to application
 #bind ` send-prefix

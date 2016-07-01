@@ -1,3 +1,4 @@
+set-option -g default-shell $SHELL
 # use UTF8
 #set -g utf8
 #set-window-option -g utf8 on

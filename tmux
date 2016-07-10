@@ -10,10 +10,10 @@ set -g default-terminal "screen-256color"
 # set scrollback history to 30000 (30k)
 set -g history-limit 30000
 
-# set C-space as the default prefix key combination
+# set C-a as the default prefix key combination
 # and unbind C-b to free it up
 unbind C-b
-set -g prefix C-space
+set -g prefix C-a
 
 # use send-prefix to pass ` (tic) through to application
 #bind ` send-prefix
@@ -147,7 +147,7 @@ set -g visual-activity on
 
 # show host name and IP address on left side of status bar
 set -g status-left-length 85 
-#set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(dig +short myip.opendns.com @resolver1.opendns.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') #[fg=green]#(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk -F': ' '/ SSID/{print $2}') "
+set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(dig +short myip.opendns.com @resolver1.opendns.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') #[fg=green]#(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk -F': ' '/ SSID/{print $2}') "
 #set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') #[fg=green]#(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk -F': ' '/ SSID/{print $2}') "
 #set -g status-left "#[fg=green]: #h : #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #(ifconfig en3 | grep 'inet ' | awk '{print \"en3 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') #[fg=green]#(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk -F': ' '/ SSID/{print $2}') "
 

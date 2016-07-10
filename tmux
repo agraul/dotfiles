@@ -1,15 +1,3 @@
-set-option -g default-shell $SHELL
-# use UTF8
-#set -g utf8
-#set-window-option -g utf8 on
-
-# make tmux display things in 256 colors
-set -g default-terminal "screen-256color"
-#set -g default-terminal "xterm-256color"
-
-# set scrollback history to 30000 (30k)
-set -g history-limit 30000
-
 # set C-a as the default prefix key combination
 # and unbind C-b to free it up
 unbind C-b

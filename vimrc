@@ -435,3 +435,8 @@ endfunction
 "show line number
 set number
 set relativenumber
+
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'romainl/Apprentice'
+call plug#end()

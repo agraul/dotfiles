@@ -425,7 +425,6 @@ endfunction
 "endif
 "show line number
 set number
-set relativenumber
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'

@@ -9,9 +9,11 @@ powerline-daemon -q
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='awesome-fontconfig'
+#POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
 DEFAULT_USER=alex
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

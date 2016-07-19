@@ -12,7 +12,7 @@ rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 !rxvt-unicode config
 !------------------------------------------------------------------
 URxvt.font: xft:Source Code Pro:size=13
-URxvt.boldFont: xft:Source Code Pro:bold:size=11
+URxvt.boldFont: xft:Sauce Code Powerline Bold:size=13
 URxvt.scrollBar: false
 !gruvbox colorscheme
 URxvt.color24:  #076678

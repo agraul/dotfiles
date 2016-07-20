@@ -204,6 +204,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-exec_always feh --bg-scale /home/alex/Pictures/blue_pisa.png
+exec_always feh --bg-scale /home/alex/Pictures/lake-scenery.jpg
 exec /usr/lib/polkit-gnome-authentication-agent-1
 exec compton

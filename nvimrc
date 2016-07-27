@@ -1,3 +1,8 @@
+call plug#begin('.config/nvim/plugged')
+Plug 'trusktr/seti.vim'
+Plug 'morhetz/gruvbox'
+call plug#end()
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -44,12 +49,12 @@ set novisualbell
 set t_vb=
 set tm=500
 
-"colorscheme
-try
-    colorscheme desert
-catch
-endtry
-
+" colorscheme
+"try
+"    colorscheme desert
+"catch
+"endtry
+colorscheme gruvbox
 set background=dark
 
 set ffs=unix
@@ -141,7 +146,7 @@ endtry
 " set viminfo^=%
 
 " Remap VIM 0 to first non-blank character
-map 0 ^
+"map 0 ^
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -158,6 +163,3 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
 set number
-set relativenumber
-
-

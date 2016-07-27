@@ -1,11 +1,19 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/alex/.oh-my-zsh
-
+  export TERM="xterm-256color"
+# powerline status
+powerline-daemon -q
+. /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
+DEFAULT_USER=alex
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +57,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found common-aliases suse vi-mode tmux)
+plugins=(git command-not-found common-aliases suse vi-mode tmux python)
 
 # User configuration
 
@@ -82,4 +90,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=$HOME/bin:$PATH
+sshec2="ssh -i amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"

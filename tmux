@@ -13,7 +13,7 @@ set -g history-limit 30000
 # set C-space as the default prefix key combination
 # and unbind C-b to free it up
 unbind C-b
-set -g prefix C-space
+set -g prefix C-a
 
 # use send-prefix to pass ` (tic) through to application
 #bind ` send-prefix

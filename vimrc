@@ -435,3 +435,10 @@ endfunction
 "show line number
 set number
 set relativenumber
+
+"vim-plug(ins)
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/klen/python-mode'
+call plug#end()
+" force python3 for python-mode
+let g:pymode_python = 'python3'

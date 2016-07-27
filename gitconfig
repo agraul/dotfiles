@@ -13,3 +13,5 @@
 	pager = less
 [color]
 	ui = auto
+[push]
+	default = simple

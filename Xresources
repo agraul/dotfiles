@@ -1,19 +1,26 @@
-! -----------------------------------------------------------------
+! ------------------------------------------------------------------------------
 ! ROFI Color theme
-! -----------------------------------------------------------------
-rofi.color-enabled: true
-rofi.opacity: 90
-rofi.color-window: #273238, #273238, #1e2529
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
-rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+! ------------------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #FAC863 ,  #1B2B34
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+! Color scheme for active row
+rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+! Color scheme window
+rofi.color-window:                   argb:ee222222,  #FAC863 ,  #FAC863
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
 
 !------------------------------------------------------------------
 !rxvt-unicode config
 !------------------------------------------------------------------
-URxvt.font: xft:Liberation Mono for Powerline:size=13,xft:PowerlineSymbols:size=13
-URxvt.boldFont: xft:Sauce Code Powerline Bold:size=13
+URxvt.font: xft:Source Code Pro:size=13
+URxvt.boldFont: xft:Souece Code Pro:Bold:size=13
 URxvt.scrollBar: false
+URxvt.visualBell: false 
 !gruvbox colorscheme
 URxvt.color24:  #076678
 URxvt.color66:  #427b58

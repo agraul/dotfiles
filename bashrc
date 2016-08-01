@@ -34,16 +34,15 @@ test -s ~/.alias && . ~/.alias || true
 #Aliases
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
-alias lla='ls -a -l --color=auto'
+alias la='ls -a -l --color=auto'
 alias l.='ls -d .* --color=auto'
 alias rm='rm -Iv'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias vi='vim'
+alias vi='nvim'
 alias py='python3'
-alias livestreamer='livestreamer --player vlc'
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -54,10 +53,13 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
 alias get='git '
-alias sshaws='ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-38-199-56.us-west-2.compute.amazonaws.com'
+alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
+alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
+alias cl='clear'
+
 
 # Locale and editor
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER="firefox '%s' &"	
 
 #Prompt

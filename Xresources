@@ -17,10 +17,13 @@ rofi.separator-style:                solid
 !------------------------------------------------------------------
 !rxvt-unicode config
 !------------------------------------------------------------------
-URxvt.font: xft:Source Code Pro:size=13
-URxvt.boldFont: xft:Souece Code Pro:Bold:size=13
-URxvt.scrollBar: false
+URxvt.font: xft:FiraMono-Regular:size=13
+URxvt.boldFont: xft:Source Code Pro:Bold:size=13
+URxvt.scrollBar: true
 URxvt.visualBell: false 
+URxvt.cursorBlink: false
+URxvt.cursorUnderline: false
+!URxvt.title: true
 !gruvbox colorscheme
 URxvt.color24:  #076678
 URxvt.color66:  #427b58
@@ -53,6 +56,8 @@ URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
+URxvt.scrollColor: #ebdbb2
+URxvt.scrollstyle: plain
 
 hard contrast: *background: #1d2021
 *background: #282828

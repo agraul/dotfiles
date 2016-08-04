@@ -59,6 +59,8 @@ alias cl='clear'
 
 #quick battery stats
 alias batst="cat /sys/class/power_supply/BAT0/status && cat /sys/class/power_supply/BAT0/capacity"
+# weather information
+alias wttr="curl wttr.in/Hamburg"
 
 
 # Locale and editor

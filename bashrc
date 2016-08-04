@@ -57,6 +57,9 @@ alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.co
 alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
 alias cl='clear'
 
+#quick battery stats
+alias batst="cat /sys/class/power_supply/BAT0/status && cat /sys/class/power_supply/BAT0/capacity"
+
 
 # Locale and editor
 export EDITOR=nvim

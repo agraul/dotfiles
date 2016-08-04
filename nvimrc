@@ -54,7 +54,9 @@ set tm=500
 "    colorscheme desert
 "catch
 "endtry
-colorscheme gruvbox
+try
+    colorscheme gruvbox
+endtry
 set background=dark
 
 set ffs=unix

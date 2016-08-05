@@ -33,9 +33,9 @@ hc keybind $Mod-Shift-x spawn lock.sh
 #applications
 hc keybind $Mod-Shift-Return spawn firefox
 
-hc keybind $Mod-Shift-q quit
+hc keybind $Mod-Shift-e quit
 hc keybind $Mod-Shift-r reload
-hc keybind $Mod-Shift-c close
+hc keybind $Mod-Shift-q close
 hc keybind $Mod-Return spawn urxvt-256color # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-d spawn rofi -show drun
 

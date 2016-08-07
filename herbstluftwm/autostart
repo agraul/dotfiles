@@ -11,7 +11,7 @@ hc emit_hook reload
 xsetroot -solid '#5A8E3A'
 
 #wallpaper
-feh --bg-scale /home/alex/Pictures/landscape-615428_1920.jpg
+feh --bg-scale /home/alex/Pictures/Mount-Taranaki.jpg
 
 #gnome polkit for torguard
 #/usr/lib/polkit-gnome-authentication-agent-1 STARTPROBLEM!!!!!
@@ -82,6 +82,7 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume 0 +5% #increase sound volume
 hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume 0 -5% #decrease sound volume
 hc keybind XF86AudioMute spawn pactl set-sink-mute 0 toggle # mute sound
+hc keybind XF86AudioMicMute spawn pactl set-source-mute 1 toggle # mute sound
 hc keybind XF86AudioPlay spawn dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause #play/pause
 hc keybind XF86AudioNext spawn dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next #next
 hc keybind XF86AudioPrev spawn dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous #previous
@@ -89,7 +90,7 @@ hc keybind XF86AudioStop spawn dbus-send --print-reply --dest=org.mpris.MediaPla
 
 
 # tags
-tag_names=("  " "  " "  " "  " "  " "  " "  " "  ")
+tag_names=("  " "  " "  " "  " "  " "  " "  " "  ")
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true

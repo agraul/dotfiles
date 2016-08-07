@@ -68,6 +68,7 @@ hc pad $monitor $panel_height
         # generated if the output changed compared to the previous run.
         date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
       #TODO:  volume +$''
+        battery +$'cat ^fg(#efefef) /sys/class/power_supple/BAT1/capacity'
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -123,7 +124,7 @@ hc pad $monitor $panel_height
 
 
         # small adjustments
-        right="$separator^bg() $date $separator"
+        right="$separator^bg() $battery $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")

@@ -1,6 +1,7 @@
 call plug#begin('.config/nvim/plugged')
 Plug 'trusktr/seti.vim'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " With a map leader it's possible to do extra key combinations

@@ -65,7 +65,7 @@ alias wttr="curl wttr.in/Hamburg"
 
 # Locale and editor
 export EDITOR=nvim
-export BROWSER="firefox '%s' &"	
+export BROWSER="chromium '%s' &"	
 
 #Prompt
 BGREEN='\[\033[1;32m\]'

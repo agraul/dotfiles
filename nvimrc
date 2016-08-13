@@ -1,8 +1,19 @@
-call plug#begin('.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'trusktr/seti.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'nvie/vim-flake8'
+Plug 'scrooloose/nerdtree'
+"Plug 'justr/vim-nerdtree-tabs'
 call plug#end()
+
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ingore files in NERDTree
+let python_highlight_all=1
+syntax on
+
+set clipboard=unnamed
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -47,14 +58,9 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
 
 " colorscheme
-"try
-"    colorscheme desert
-"catch
-"endtry
 try
     colorscheme gruvbox
 endtry
@@ -139,17 +145,6 @@ try
   set stal=2
 catch
 endtry
-
-" Return to last edit position when opening files (You want this!)
-" autocmd BufReadPost *
-"      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-"      \   exe "normal! g`\"" |
-"      \ endif
-" Remember info about open buffers on close
-" set viminfo^=%
-
-" Remap VIM 0 to first non-blank character
-"map 0 ^
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z

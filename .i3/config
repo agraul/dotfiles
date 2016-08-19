@@ -31,7 +31,7 @@ font pango:System San Francisco Display 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt-256color 
+bindsym $mod+Return exec urxvtc-256color 
 #bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
 
 set $bg-color            #282828
 set $inactive-bg-color   #282828
-set $text-color          #cc241d
+set $text-color          #97CC56
 set $inactive-text-color #928374
 set $urgent-bg-color     #ebdbb2
 
@@ -209,9 +209,16 @@ bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mp
 bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous #previous
 bindsym XF86AudioStop exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop #stop
 
-exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/lake-scenery.jpg
+exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/Chameleon-Green-Art.jpg
 exec /usr/lib/polkit-gnome-authentication-agent-1
 exec --no-startup-id compton
 exec firefox
 exec dropbox start
 exec /usr/bin/setxkbmap -option "caps:swapescape"
+exec urxvtd-256color -f
+
+
+# gaps
+for_window [class="^.*"] border pixel 0
+gaps outer 15 
+gaps inner 15

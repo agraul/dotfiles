@@ -4,13 +4,13 @@
 ! Use extended color scheme
 rofi.color-enabled:                  true
 ! Color scheme for normal row
-rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #98971A ,  #1B2B34
+rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #97CC56 ,  #1B2B34
 ! Color scheme for urgent row
 rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
 ! Color scheme for active row
 rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
 ! Color scheme window
-rofi.color-window:                   argb:ee222222,  #98971A ,  #98971A
+rofi.color-window:                   argb:ee222222,  #97CC56 ,  #97CC56
 ! Separator style (none, dash, solid)
 rofi.separator-style:                solid
 
@@ -56,7 +56,7 @@ URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
-URxvt.scrollColor: #cc241d
+URxvt.scrollColor: #97CC56
 URxvt.scrollstyle: plain
 
 hard contrast: *background: #1d2021

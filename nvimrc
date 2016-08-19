@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'metakirby5/codi.vim'
 Plug 'trusktr/seti.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'

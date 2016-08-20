@@ -212,10 +212,10 @@ bindsym XF86AudioStop exec --no-startup-id dbus-send --print-reply --dest=org.mp
 exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/Chameleon-Green-Art.jpg
 exec /usr/lib/polkit-gnome-authentication-agent-1
 exec --no-startup-id compton
-exec firefox
-exec dropbox start
+exec dropbox start &
 exec /usr/bin/setxkbmap -option "caps:swapescape"
 exec urxvtd-256color -f
+exec redshift-gtk &
 
 
 # gaps

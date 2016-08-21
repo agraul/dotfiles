@@ -19,7 +19,7 @@ rofi.separator-style:                solid
 !------------------------------------------------------------------
 URxvt.font: xft:FiraMono-Regular:size=13
 URxvt.boldFont: xft:Source Code Pro:Bold:size=13
-URxvt.scrollBar: true
+URxvt.scrollBar: false
 URxvt.visualBell: false 
 URxvt.cursorBlink: false
 URxvt.cursorUnderline: false

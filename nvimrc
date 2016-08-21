@@ -6,6 +6,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree'
+Plug 'davidhalter/jedi-vim'
 "Plug 'justr/vim-nerdtree-tabs'
 call plug#end()
 

@@ -273,7 +273,8 @@
     " => Editing mappings
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Remap VIM 0 to first non-blank character
-    map 0 ^
+    "map 0 ^
+
 
     " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
     nmap <M-j> mz:m+<cr>`z
@@ -429,11 +430,23 @@
 
     "vim-plug(ins)
     call plug#begin('~/.vim/plugged')
-    Plug 'https://github.com/klen/python-mode'
     Plug 'morhetz/gruvbox'
+    Plug 'klen/python-mod'
+    Plug 'tpope/vim-surround'
+    Plug 'scrooloose/syntastic'
+    Plug 'nvie/vim-flake8'
+    Plug 'scrooloose/nerdtree'
+    Plug 'davidhalter/jedi-vim'
     call plug#end()
     " force python3 for python-mode
 let g:pymode_python = 'python3'
+let g:pymode_rope = 0
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ingore files in NERDTree
+let python_highlight_all=1
+syntax on
+
+
 
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()

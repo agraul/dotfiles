@@ -19,6 +19,7 @@ bindsym $mod+Shift+q kill
 
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run 
+bindsym $mod+Shift+d exec rofi -show drun
 
 
 # change focus
@@ -109,7 +110,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 assign [class="Firefox"] $workspace1
-assign [class="Thunderbird"] $workspace10
+assign [class="Thunderbird"] $workspace6
 assign [class="Okular"] $workspace4
 
 # reload the configuration file
@@ -167,7 +168,7 @@ bar {
                 background $bg-color
                 separator #757575
                 #                   border              background          text
-                focused_workspace   $bg-color           $bg-color           $fg-color
+                focused_workspace   $fg-color           $bg-color           $fg-color
                 inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
                 urgent_workspace    $urgent-bg-color    $urgent-bg-color    $fg-color 
         }

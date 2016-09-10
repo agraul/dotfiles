@@ -77,4 +77,4 @@ BLUE='\[\033[0;34m\]'
 NORMAL='\[\033[00m\]'
 PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\u@\h ${RED}\$ ${NORMAL}"
 
-source /home/alex/herbstluftwm/share/herbstclient-completion
+# source /home/alex/herbstluftwm/share/herbstclient-completion

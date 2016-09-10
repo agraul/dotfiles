@@ -1,46 +1,4 @@
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Maintainer: 
-    "       Amir Salihefendic
-    "       http://amix.dk - amix@amix.dk
-    "
-    " Version: 
-    "       5.0 - 29/05/12 15:43:36
-    "
-    " Blog_post: 
-    "       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-    "
-    " Awesome_version:
-    "       Get this config, nice color schemes and lots of plugins!
-    "
-    "       Install the awesome version from:
-    "
-    "           https://github.com/amix/vimrc
-    "
-    " Syntax_highlighted:
-    "       http://amix.dk/vim/vimrc.html
-    "
-    " Raw_version: 
-    "       http://amix.dk/vim/vimrc.txt
-    "
-    " Sections:
-    "    -> General
-    "    -> VIM user interface
-    "    -> Colors and Fonts
-    "    -> Files and backups
-    "    -> Text, tab and indent related
-    "    -> Visual mode related
-    "    -> Moving around, tabs and buffers
-    "    -> Status line
-    "    -> Editing mappings
-    "    -> vimgrep searching and cope displaying
-    "    -> Spell checking
-    "    -> Misc
-    "    -> Helper functions
-    "
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => General
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Sets how many lines of history VIM has to remember
@@ -141,11 +99,6 @@
     " Enable syntax highlighting
     syntax enable 
     set t_Co=256
-    "try
-    "    colorscheme gruvbox 
-    "catch
-    "endtry
-    "set background=dark
 
     " Set utf8 as standard encoding and en_US as the standard language
     set encoding=utf8
@@ -437,6 +390,7 @@
     Plug 'nvie/vim-flake8'
     Plug 'scrooloose/nerdtree'
     Plug 'davidhalter/jedi-vim'
+    Plug 'altercation/vim-colors-solarized'
     call plug#end()
     " force python3 for python-mode
 let g:pymode_python = 'python3'
@@ -448,9 +402,9 @@ syntax on
 
 
 
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
 
-colorscheme gruvbox
+colorscheme solarized
 set background=dark

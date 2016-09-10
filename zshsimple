@@ -1,0 +1,33 @@
+# exports
+export TERM="xterm-256color"
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+export PAGER='less'
+export EDITOR='vim'
+
+# aliases
+alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
+alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
+alias ..='cd ..'
+alias ...='cd../..'
+alias ....='cd../../..'
+
+alias lh='ls -d .* --color=auto' # show hidden files/directories only
+alias lsd='ls -aFhlG --color=auto'
+alias la='ls -al --color=auto'
+alias ls='ls -GFh --color=auto'
+alias ll='ls -GFhl --color=auto'
+
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gb='git branch'
+alias gc='git checkout'
+alias gpu='git pull'
+alias gcl='git clone'
+alias gh='git hist' # hist is a .gitconfig alias

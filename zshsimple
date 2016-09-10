@@ -32,6 +32,9 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias gh='git hist' # hist is a .gitconfig alias
 
+alias py='python3'
+alias cl='clear'
+
 #Prompt
 autoload -Uz colors && colors
 # archwiki example PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%# "

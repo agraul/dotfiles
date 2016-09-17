@@ -384,13 +384,15 @@
     "vim-plug(ins)
     call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
-    Plug 'klen/python-mod'
+"    Plug 'klen/python-mod'
     Plug 'tpope/vim-surround'
     Plug 'scrooloose/syntastic'
     Plug 'nvie/vim-flake8'
     Plug 'scrooloose/nerdtree'
     Plug 'davidhalter/jedi-vim'
     Plug 'altercation/vim-colors-solarized'
+    Plug 'jacoborus/tender'
+    Plug 'fcpg/vim-fahrenheit'
     call plug#end()
     " force python3 for python-mode
 let g:pymode_python = 'python3'
@@ -406,5 +408,5 @@ syntax on
 "python3 powerline_setup()
 "python3 del powerline_setup
 
-colorscheme solarized
+colorscheme tender
 set background=dark

@@ -75,6 +75,8 @@ RED='\[\033[0;31m\]'
 BBLUE='\[\033[1;34m\]'
 BLUE='\[\033[0;34m\]'
 NORMAL='\[\033[00m\]'
-PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\u@\h ${RED}\$ ${NORMAL}"
+LGRAY='\[\033[0;37m\]'
+#PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\u@\h ${RED}\$ ${NORMAL}"
+PS1="${LGRAY}\u@\h ${GREEN}[\w] ${RED}\$${NORMAL} "
 
 # source /home/alex/herbstluftwm/share/herbstclient-completion

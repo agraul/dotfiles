@@ -408,5 +408,5 @@ syntax on
 "python3 powerline_setup()
 "python3 del powerline_setup
 
-colorscheme tender
+colorscheme gruvbox
 set background=dark

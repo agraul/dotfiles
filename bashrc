@@ -53,7 +53,7 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
 alias get='git '
-alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
+alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@52.33.72.90"
 alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
 alias cl='clear'
 
@@ -64,7 +64,7 @@ alias wttr="curl wttr.in/Hamburg"
 
 
 # Locale and editor
-export EDITOR=nvim
+export EDITOR=vim
 export BROWSER="firefox '%s' &"	
 
 #Prompt
@@ -77,6 +77,6 @@ BLUE='\[\033[0;34m\]'
 NORMAL='\[\033[00m\]'
 LGRAY='\[\033[0;37m\]'
 #PS1="${BLUE}(${RED}\w${BLUE}) ${NORMAL}\u@\h ${RED}\$ ${NORMAL}"
-PS1="\u@\h ${GREEN}[\w] ${RED}\$${NORMAL} "
+#PS1="\u@\h ${GREEN}[\w] ${RED}\$${NORMAL} "
 
 # source /home/alex/herbstluftwm/share/herbstclient-completion

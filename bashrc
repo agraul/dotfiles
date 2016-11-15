@@ -55,7 +55,7 @@ alias got='git '
 alias get='git '
 alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@52.33.72.90"
 alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
-alias cl='clear'
+alias gdb='gdb -q'
 
 #quick battery stats
 alias batst="cat /sys/class/power_supply/BAT0/status && cat /sys/class/power_supply/BAT0/capacity"

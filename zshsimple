@@ -1,3 +1,6 @@
+# tmux on startup
+#[[ $TERM != "screen" ]] && exec tmux
+
 # exports
 export TERM="xterm-256color"
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
@@ -10,6 +13,7 @@ export EDITOR='vim'
 # aliases
 alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
 alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -32,7 +36,9 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias gh='git hist' # hist is a .gitconfig alias
 
-alias py='python3'
+alias py3='python3'
+alias py='python'
+alias gdb='gdb -q'
 
 #Prompt
 autoload -Uz colors && colors

@@ -11,9 +11,10 @@ font pango:monospace 11
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec urxvtc-256color 
+#bindsym $mod+Return exec urxvt-256color 
 #bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -71,7 +72,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 #
 
 set $workspace1  "1"
@@ -86,12 +87,14 @@ set $workspace9  "9"
 set $workspace10  "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace1; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
+#bindsym $mod+1 workspace $workspace1; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
+bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6; exec [ $(ps h -C thunderbird | wc -l) = 0 ] && /usr/bin/thunderbird
+#bindsym $mod+6 workspace $workspace6; exec [ $(ps h -C thunderbird | wc -l) = 0 ] && /usr/bin/thunderbird
+bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
@@ -150,13 +153,14 @@ bindsym $mod+r mode "resize"
 
 set $bg-color            #282828
 set $inactive-bg-color   #282828
-set $fg-color            #97CC56
-set $inactive-text-color #97CC56
+set $fg-color            #282828
+set $inactive-text-color #C85A5A
 set $urgent-bg-color     #767676
+set $text-color          #AFAF00
 
 # window colors
 #                       border              background          text                 indicator
-client.focused          $fg-color           $fg-color           $fg-color            $fg-color
+client.focused          $fg-color           $fg-color           $text-color            $fg-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color $bg-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color $bg-color
 client.urgent           $fg-color           $urgent-bg-color    $fg-color            $bg-color
@@ -187,14 +191,15 @@ bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mp
 bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous #previous
 bindsym XF86AudioStop exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop #stop
 
-#exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/Chameleon-Green-Art.jpg
+exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/wallhaven-74042.png
 exec /usr/lib/polkit-gnome-authentication-agent-1
 exec --no-startup-id compton
 exec dropbox start &
-exec /usr/bin/setxkbmap -option "caps:swapescape"
+exec --no-startup-id /usr/bin/setxkbmap -layout "gb" -option "caps:swapescape"
 #exec urxvtd-256color -f
 exec redshift-gtk &
 exec nextcloud &
+exec --no-startup-id nm-applet
 
 
 # gaps

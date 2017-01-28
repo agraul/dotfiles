@@ -1,6 +1,3 @@
-# tmux on startup
-#[[ $TERM != "screen" ]] && exec tmux
-
 # exports
 export TERM="xterm-256color"
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"

@@ -18,13 +18,13 @@ rofi.separator-style:                solid
 !rxvt-unicode config
 !------------------------------------------------------------------
 URxvt.font: xft:Source Code Pro:size=13
-!URxvt.font: xft:Ubuntu Mono derivate Powerline:style=Regular:size=14
-URxvt.boldFont: xft:Source Code Pro:Bold:size=14
+!URxvt.font: xft::DejaVu Sans Code:style=Book:size=14
+URxvt.boldFont: xft:Source Code Pro:Bold:size=13
 URxvt.scrollBar: false
 URxvt.visualBell: false 
 URxvt.cursorBlink: false
 URxvt.cursorUnderline: false
-URxvt.letterSpace: -1
+!URxvt.letterSpace: -1
 
 !URxvt.title: true
 

@@ -393,6 +393,7 @@
     Plug 'altercation/vim-colors-solarized'
     Plug 'jacoborus/tender'
     Plug 'fcpg/vim-fahrenheit'
+    Plug 'zandrmartin/vim-distinguished'
     call plug#end()
     " force python3 for python-mode
 let g:pymode_python = 'python3'
@@ -408,5 +409,5 @@ syntax on
 "python3 powerline_setup()
 "python3 del powerline_setup
 
-colorscheme desert
-set background=dark
+colorscheme distinguished
+set background=light

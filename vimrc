@@ -394,20 +394,22 @@
     Plug 'jacoborus/tender'
     Plug 'fcpg/vim-fahrenheit'
     Plug 'zandrmartin/vim-distinguished'
+    Plug 'itchyny/lightline.vim'
+    Plug 'fneu/breezy'
     call plug#end()
-    " force python3 for python-mode
-let g:pymode_python = 'python3'
-let g:pymode_rope = 0
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ingore files in NERDTree
 let python_highlight_all=1
 syntax on
+set background=dark
+"set termguicolors
+colorscheme breezy
 
-
-
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
-
-colorscheme distinguished
-set background=light
+let g:lightline = {
+    \ 'colorscheme': 'breezy',
+     \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+    \ }

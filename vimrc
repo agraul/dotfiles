@@ -396,6 +396,7 @@
     Plug 'zandrmartin/vim-distinguished'
     Plug 'itchyny/lightline.vim'
     Plug 'fneu/breezy'
+    Plug 'fatih/vim-go'
     call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ingore files in NERDTree
@@ -413,3 +414,6 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
     \ }
+
+" save on :make (vim-go)
+set autowrite

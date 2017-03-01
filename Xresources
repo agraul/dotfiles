@@ -4,13 +4,13 @@
 ! Use extended color scheme
 rofi.color-enabled:                  true
 ! Color scheme for normal row
-rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #97CC56 ,  #1B2B34
+!rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #97CC56 ,  #1B2B34
 ! Color scheme for urgent row
-rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+!rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
 ! Color scheme for active row
-rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+!rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
 ! Color scheme window
-rofi.color-window:                   argb:ee222222,  #97CC56 ,  #97CC56
+!rofi.color-window:                   argb:ee222222,  #97CC56 ,  #97CC56
 ! Separator style (none, dash, solid)
 rofi.separator-style:                solid
 
@@ -22,11 +22,10 @@ URxvt.font: xft:Source Code Pro:size=13
 URxvt.boldFont: xft:Source Code Pro:Bold:size=13
 URxvt.scrollBar: false
 URxvt.visualBell: false 
-URxvt.cursorBlink: false
+URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 !URxvt.letterSpace: -1
 
-!URxvt.title: true
 
 ! special
 URxvt*.foreground:   #e6e1dc

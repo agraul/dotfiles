@@ -397,6 +397,7 @@
     Plug 'itchyny/lightline.vim'
     Plug 'fneu/breezy'
     Plug 'fatih/vim-go'
+    Plug 'danilo-augusto/vim-afterglow'
     call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ingore files in NERDTree
@@ -404,7 +405,7 @@ let python_highlight_all=1
 syntax on
 set background=dark
 "set termguicolors
-colorscheme breezy
+"colorscheme breezy
 
 let g:lightline = {
     \ 'colorscheme': 'breezy',

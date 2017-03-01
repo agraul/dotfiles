@@ -92,6 +92,7 @@ alias zin="sudo zypper install"
 alias zrm="sudo zypper remove"
 alias zps="sudo zypper ps -s"
 alias zup="sudo zypper dup --no-allow-vendor-change"
+alias zif="zypper info"
 
 # python
 alias py="python"

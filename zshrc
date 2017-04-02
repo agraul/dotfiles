@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/home/alex/go/bin:/usr/share/go/contrib/bin:/usr/sbin/
+
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/alex/.oh-my-zsh
@@ -9,6 +10,7 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 #ZSH_THEME="michelebologna"
+#ZSH_THEME="lukerandall"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,7 +55,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found sudo  tmux)
-#ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOSTART="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,10 +92,22 @@ source $ZSH/oh-my-zsh.sh
 alias zse="zypper search"
 alias zin="sudo zypper install"
 alias zrm="sudo zypper remove"
-alias zps="sudo zypper ps -s"
+alias zps="zypper ps -s"
+alias zpsr="sudo zypper ps -s"
 alias zup="sudo zypper dup --no-allow-vendor-change"
 alias zif="zypper info"
+alias zshr="sudo zypper sh"
+alias zref="sudo zypper ref"
 
 # python
 alias py="python"
 alias py3="python3"
+
+# steam fix
+alias steam="LIBGL_DRI3_DISABLE=1 steam"
+
+# mount /dev/sdb1
+alias sdb1temp="sudo mount /dev/sdb1 ~/temp"
+
+# netflix in chromium kiosk
+alias netflix="chromium --user-data-dir=chromium-netflix --kiosk https://netflix.com"

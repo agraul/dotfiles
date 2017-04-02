@@ -25,7 +25,7 @@ command W w !sudo tee % > /dev/null
 " VIM user interface
 
 " Set 7 lines to the cursor - when moving vertically using j/k
-"set so=7
+set so=7
 
 " Turn on the WiLd menu
 "set wildmenu
@@ -379,10 +379,11 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 "let python_highlight_all=1
 syntax on
 set background=dark
-colorscheme fahrenheit
+colo breezy 
+"colo solarized
 
 let g:lightline = {
-    \ 'colorscheme': 'fahrenheit',
+    \ 'colorscheme': 'seoul256',
     \ 'active': {
     \   'left': [  [ 'mode', 'paste'],
     \               [ 'fugitive', 'readonly', 'filename', 'modified' ] ]

@@ -152,12 +152,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #282828
-set $inactive-bg-color   #282828
-set $fg-color            #282828
-set $inactive-text-color #C85A5A
+set $bg-color            #000000
+set $inactive-bg-color   #262626
+set $fg-color            #000000
+set $inactive-text-color #875f5f
 set $urgent-bg-color     #767676
-set $text-color          #AFAF00
+set $text-color          #af875f
 
 # window colors
 #                       border              background          text                 indicator
@@ -168,17 +168,17 @@ client.urgent           $fg-color           $urgent-bg-color    $fg-color       
 
 # Start i3blocks to display a workspace bar 
 bar {
- #        position top
-   #      status_command i3blocks -c ~/.i3/i3blocks.conf
-      #   colors {
-       #         background $bg-color
-        #        separator #757575
-         #       #                   border              background          text
-          #      focused_workspace   $fg-color           $bg-color           $fg-color
-           #     inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-            #    urgent_workspace    $urgent-bg-color    $urgent-bg-color    $fg-color 
-        #}
-        status_command i3status
+        position top
+        status_command i3blocks -c ~/.i3/i3blocks.conf
+#        status_command i3status
+        colors {
+                background $bg-color
+                separator #757575
+                #                   border              background          text
+                focused_workspace   $fg-color           $bg-color           $text-color
+                inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+                urgent_workspace    $urgent-bg-color    $urgent-bg-color    $fg-color 
+        }
 }
 
 
@@ -194,12 +194,12 @@ bindsym XF86AudioStop exec --no-startup-id dbus-send --print-reply --dest=org.mp
 
 exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/Wallpaper/XtWYyps.jpg
 #exec /usr/lib/polkit-gnome-authentication-agent-1
-exec no-startup-id compton 
+exec no-startup-id compton -b --backend glx --vsync opengl-swc
 exec dropbox start &
 exec --no-startup-id /usr/bin/setxkbmap -layout "gb" -option "caps:swapescape"
 #exec urxvtd-256color -f
 exec --no-startup-id redshift &
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 
 # gaps

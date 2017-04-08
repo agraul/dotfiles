@@ -383,7 +383,7 @@ colo breezy
 "colo solarized
 
 let g:lightline = {
-    \ 'colorscheme': 'seoul256',
+    \ 'colorscheme': 'jellybeans',
     \ 'active': {
     \   'left': [  [ 'mode', 'paste'],
     \               [ 'fugitive', 'readonly', 'filename', 'modified' ] ]

@@ -111,3 +111,7 @@ alias sdb1temp="sudo mount /dev/sdb1 ~/temp"
 
 # netflix in chromium kiosk
 alias netflix="chromium --user-data-dir=chromium-netflix --kiosk https://netflix.com"
+
+# pcscd on / off
+alias pcscdon="sudo systemctl start pcscd"
+alias pcscdoff="sudo systemctl stop pcscd"

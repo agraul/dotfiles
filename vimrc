@@ -354,10 +354,10 @@ set relativenumber
 "vim-plug
 call plug#begin('~/.vim/plugged')
 " utility
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
+"Plug 'tpope/vim-surround'
+"Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go'
@@ -373,17 +373,18 @@ Plug 'fcpg/vim-fahrenheit'
 call plug#end()
 
 " quick open nerdtree
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 " ingore files in NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$'] 
+"let NERDTreeIgnore=['\.pyc$', '\~$'] 
 "let python_highlight_all=1
 syntax on
 set background=dark
-colo breezy 
+"colo breezy 
 "colo solarized
+colo tender
 
 let g:lightline = {
-    \ 'colorscheme': 'default',
+    \ 'colorscheme': 'tender',
     \ 'active': {
     \   'left': [  [ 'mode', 'paste'],
     \               [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -395,8 +396,6 @@ let g:lightline = {
     \ 'component_visible_condition': {
     \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
     \ },
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '', 'right': '' }
     \ }
 " remove default status (-- INSERT--)
 set noshowmode

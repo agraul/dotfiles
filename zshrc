@@ -10,7 +10,9 @@ export PATH=$PATH:/home/alex/go/bin:/usr/share/go/contrib/bin:/usr/sbin/
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="michelebologna"
-ZSH_THEME="lukerandall"
+#ZSH_THEME="lukerandall"
+#ZSH_THEME="af-magic"
+ZSH_THEME="simple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

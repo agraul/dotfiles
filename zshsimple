@@ -8,19 +8,19 @@ export PAGER='less'
 export EDITOR='vim'
 
 # aliases
-alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
-alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
-
+# movement
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# list files
 alias lh='ls -d .* --color=auto' # show hidden files/directories only
 alias lsd='ls -aFhlG --color=auto'
 alias la='ls -al --color=auto'
 alias ls='ls -GFh --color=auto'
 alias ll='ls -GFhl --color=auto'
 
+# git
 alias ga='git add'
 alias gp='git push'
 alias gl='git log'
@@ -33,9 +33,35 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias gh='git hist' # hist is a .gitconfig alias
 
+# applications
 alias py3='python3'
 alias py='python'
 alias gdb='gdb -q'
+
+# openSUSE
+alias zse="zypper search"
+alias zin="sudo zypper install"
+alias zrm="sudo zypper remove"
+alias zps="zypper ps -s"
+alias zpsr="sudo zypper ps -s"
+alias zup="sudo zypper dup --no-allow-vendor-change"
+alias zif="zypper info"
+alias zshr="sudo zypper sh"
+alias zref="sudo zypper ref"
+
+# steam fix
+alias steam="LIBGL_DRI3_DISABLE=1 steam"
+
+# mount /dev/sdb1 to ~/temp
+alias sdb1temp="sudo mount /dev/sdb1 ~/temp"
+
+# netflix in chromium kiosk
+alias netflix="chromium --user-data-dir=chromium-netflix --kiosk https://netflix.com"
+
+# pcscd on / off (yubikey / GPG)
+alias pcscdon="sudo systemctl start pcscd"
+alias pcscdoff="sudo systemctl stop pcscd"
+
 
 #Prompt
 autoload -Uz colors && colors

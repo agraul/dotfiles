@@ -17,9 +17,9 @@ rofi.separator-style:                solid
 !------------------------------------------------------------------
 !rxvt-unicode config
 !------------------------------------------------------------------
-URxvt.font: xft:Source Code Pro:size=13
+URxvt.font: xft:Input Mono:size=13
 !URxvt.font: xft::DejaVu Sans Code:style=Book:size=14
-URxvt.boldFont: xft:Source Code Pro:Bold:size=13
+URxvt.boldFont: xft:Input Mono:Bold:size=13
 URxvt.scrollBar: false
 URxvt.visualBell: false 
 URxvt.cursorBlink: true

@@ -121,7 +121,8 @@ set lbr
 set tw=500
 
 set si "Smart indent
-inoremap #  X#
+"Don't indent comments tarting with #
+inoremap #  X# 
 set ai "Auto indent
 set wrap "Wrap lines
 

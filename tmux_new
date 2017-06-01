@@ -1,7 +1,7 @@
  # set ZSH as default shell
  set-option -g default-shell /usr/bin/zsh
  # set 256 colours
- set -g default-terminal "screen-256color"
+ #set -g default-terminal "screen-256color"
 
 # set default indices to 1
 set-option -g base-index 1
@@ -16,8 +16,8 @@ bind C-a send-prefix
 bind R source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
 # use PREFIX | to split window horizontally and PREFIX - to split vertically
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c '#{pane_current_path}'
+bind - split-window -v -c '#{pane_current_path}'
 
 # map Vi movement keys as pane movement keys
 bind h select-pane -L

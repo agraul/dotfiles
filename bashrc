@@ -31,7 +31,7 @@
 
 test -s ~/.alias && . ~/.alias || true
 
-#Aliases
+# aliases
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -a -l --color=auto'
@@ -41,9 +41,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias vi='nvim'
-alias py='python3'
 alias gs='git status '
+alias gss='git status -s'
 alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
@@ -53,14 +52,43 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
 alias get='git '
-alias sshec2="ssh -i ~/amazon-ssh-keys.pem ec2-user@52.33.72.90"
-alias sftpec2="sftp -i ~/amazon-ssh-keys.pem ec2-user@ec2-52-33-72-90.us-west-2.compute.amazonaws.com"
-alias gdb='gdb -q'
 
-#quick battery stats
+
+# applications
+alias gdb='gdb -q'
+alias py3='python3'
+alias py2='python'
+alias py='python3'
+
+# quick battery stats
 alias batst="cat /sys/class/power_supply/BAT0/status && cat /sys/class/power_supply/BAT0/capacity"
+
 # weather information
 alias wttr="curl wttr.in/Hamburg"
+
+ # steam fix
+alias steam="LIBGL_DRI3_DISABLE=1 steam"
+
+# mount /dev/sdb1
+alias sdb1temp="sudo mount /dev/sdb1 ~/temp"
+
+# netflix in chromium kiosk
+alias netflix="chromium --user-data-dir=chromium-netflix --kiosk https://netflix.com"
+
+# zypper
+alias zse="zypper search"
+alias zin="sudo zypper install"
+alias zrm="sudo zypper remove"
+alias zps="zypper ps -s"
+alias zpsr="sudo zypper ps -s"
+alias zup="sudo zypper dup --no-allow-vendor-change"
+alias zif="zypper info"
+alias zysh="sudo zypper shell"
+alias zref="sudo zypper refresh"
+
+# pcscd on / off
+alias pcscdon="sudo systemctl start pcscd"
+alias pcscdoff="sudo systemctl stop pcscd"
 
 
 # Locale and editor

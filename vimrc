@@ -122,7 +122,7 @@ set tw=500
 
 set si "Smart indent
 "Don't indent comments tarting with #
-inoremap #  X# 
+autocmd BufRead *.py inoremap # X<c-h>#
 set ai "Auto indent
 set wrap "Wrap lines
 
@@ -371,6 +371,10 @@ Plug 'fneu/breezy'
 Plug 'zandrmartin/vim-distinguished'
 Plug 'altercation/vim-colors-solarized'
 Plug 'fcpg/vim-fahrenheit'
+
+"typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
 call plug#end()
 
 " quick open nerdtree
@@ -402,3 +406,4 @@ let g:lightline = {
 set noshowmode
 " save on :make (vim-go)
 set autowrite
+

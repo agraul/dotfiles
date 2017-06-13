@@ -10,9 +10,9 @@ export PATH=$PATH:/home/alex/go/bin:/usr/share/go/contrib/bin:/usr/sbin/
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="michelebologna"
-#ZSH_THEME="lukerandall"
+ZSH_THEME="lukerandall"
 #ZSH_THEME="af-magic"
-ZSH_THEME="simple"
+#ZSH_THEME="simple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,7 +56,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found sudo  tmux)
+plugins=(git command-not-found sudo)
 #ZSH_TMUX_AUTOSTART="true"
 
 source $ZSH/oh-my-zsh.sh
@@ -96,7 +96,7 @@ alias zin="sudo zypper install"
 alias zrm="sudo zypper remove"
 alias zps="zypper ps -s"
 alias zpsr="sudo zypper ps -s"
-alias zup="sudo ref && sudo zypper dup --no-allow-vendor-change"
+alias zup="sudo zypper ref && sudo zypper dup --no-allow-vendor-change"
 alias zif="zypper info"
 alias zshr="sudo zypper sh"
 alias zref="sudo zypper ref"
@@ -117,3 +117,6 @@ alias netflix="chromium --user-data-dir=chromium-netflix --kiosk https://netflix
 # pcscd on / off
 alias pcscdon="sudo systemctl start pcscd"
 alias pcscdoff="sudo systemctl stop pcscd"
+
+# hybrid-sleep
+alias sleep="systemctl hybrid-sleep"

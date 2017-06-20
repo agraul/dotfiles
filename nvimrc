@@ -76,9 +76,9 @@ set incsearch
 map <silent> <leader><cr> :noh<cr>
 
 " theme
+colorscheme gruvbox
 set background=dark
 set termguicolors
-colorscheme gruvbox
 
 " cursor
 set guicursor=a:blinkon0

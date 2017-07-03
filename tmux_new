@@ -39,14 +39,14 @@ set-option -g status-keys vi
 set-window-option -g mode-keys vi
 
 # and use C-h and C-l to cycle thru panes
-bind -r C-h select-window -t :-
-bind -r C-l select-window -t :+
+#bind -r C-h select-window -t :-
+#bind -r C-l select-window -t :+
 
-# resize panes using PREFIX H, J, K, L
-bind H resize-pane -L 5
-bind J resize-pane -D 5
-bind K resize-pane -U 5
-bind L resize-pane -R 5
+# resize panes using C-[hjkl]
+bind  -r H resize-pane -L  
+bind  -r J resize-pane -D   
+bind  -r K resize-pane -U 
+bind  -r L resize-pane -R 
 
 # statusbar
 set-window-option -g status-left " #S "

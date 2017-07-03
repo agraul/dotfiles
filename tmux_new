@@ -39,8 +39,8 @@ set-option -g status-keys vi
 set-window-option -g mode-keys vi
 
 # and use C-h and C-l to cycle thru panes
-#bind -r C-h select-window -t :-
-#bind -r C-l select-window -t :+
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
 
 # resize panes using C-[hjkl]
 bind  -r H resize-pane -L  

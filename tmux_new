@@ -1,6 +1,6 @@
- # set ZSH as default shell
- set-option -g default-shell /usr/bin/zsh
- # set 256 colours for nvim
+# set ZSH as default shell
+set-option -g default-shell /usr/bin/zsh
+# set 256 colours for nvim
 set -g default-terminal "screen-256color"
 set -ga terminal-overrides ',screen-256color:Tc'
 
@@ -64,3 +64,8 @@ set-window-option -g window-status-current-fg white
 set-window-option -g window-status-current-bg black
 
 set-window-option -g status-bg colour245 
+
+# ignore smaller client size
+setw -g aggressive-resize on
+# create a session if none found to attach via "tmux attach"
+new-session -n $HOST

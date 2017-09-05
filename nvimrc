@@ -69,7 +69,7 @@ command W w !sudo tee % > /dev/null
 "searching
 set ignorecase
 set smartcase
-set hlsearch
+"set hlsearch
 set incsearch
 
 " disable search highlight on <leader><enter>
@@ -86,3 +86,11 @@ au VimLeave * set guicursor=a:block
 
 " fix Windows ^M (<leader>m)
 noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" create .htm from markdown on save using pandoc
+func! ExportToHTM()
+    silent !clear
+    silent execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . bufname("%") 
+    echo "This got called"
+endfunc
+autocmd BufWrite *.md :call ExportToHTM()

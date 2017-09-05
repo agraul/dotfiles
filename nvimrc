@@ -89,8 +89,6 @@ noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " create .htm from markdown on save using pandoc
 func! ExportToHTM()
-    silent !clear
-    silent execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . bufname("%") 
-    echo "This got called"
+    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%") 
 endfunc
-autocmd BufWrite *.md :call ExportToHTM()
+autocmd BufWritePost *.md :call ExportToHTM()

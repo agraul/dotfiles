@@ -90,5 +90,5 @@ autoload -Uz colors && colors
 
 
 PROMPT="%n@%m%{$fg[blue]%}:%{$fg[red]%}%~%{$fg[red]%}> %{$reset_color%}"
-source /home/alex/github/powerless/powerless.zsh
-source /home/alex/github/powerless/utilities.zsh
+#source /home/alex/github/powerless/powerless.zsh
+#source /home/alex/github/powerless/utilities.zsh

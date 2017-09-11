@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
+Plug 'fishbullet/deoplete-ruby'
 
 "colorschemes
 Plug 'freeo/vim-kalisi'
@@ -43,6 +44,11 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+" reload files when changed externally
+set autoread
+
+autocmd FileType ruby setlocal shiftwidth=2
 
 " delete trailing whitespace on save (python files)
 func! DeleteTrailingWS()
@@ -89,6 +95,7 @@ noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " create .htm from markdown on save using pandoc
 func! ExportToHTM()
-    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%") 
+    silent! execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%") 
+"    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%") 
 endfunc
-autocmd BufWritePost *.md :call ExportToHTM()
+"autocmd BufWritePost *.md :call ExportToHTM()

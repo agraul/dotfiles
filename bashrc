@@ -92,7 +92,7 @@ alias pcscdoff="sudo systemctl stop pcscd"
 
 
 # Locale and editor
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER="firefox '%s' &"	
 
 #Prompt
@@ -108,3 +108,8 @@ LGRAY='\[\033[0;37m\]'
 #PS1="\u@\h ${GREEN}[\w] ${RED}\$${NORMAL} "
 
 # source /home/alex/herbstluftwm/share/herbstclient-completion
+
+
+alias vncmain="x11vnc -repeat -shared -viewonly -clip xinerama1"
+
+export PATH=$PATH:~/trollolo/bin

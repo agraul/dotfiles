@@ -38,12 +38,6 @@ nmap <leader>w :w!<cr>
 colorscheme gruvbox
 set termguicolors
 set background=dark
-" fix black backgound
-if &term =~ '256color'
-    " Disable Background Color Erase (BCE) so that color schemes
-    " work properly when Vim is used inside tmux and GNU screen.
-    set t_ut=
-endif
 
 " move in wrapped lines
 nnoremap j gj

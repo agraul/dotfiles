@@ -1,5 +1,5 @@
 # set ZSH as default shell
-#set-option -g default-shell /usr/bin/zsh
+set-option -g default-shell /usr/bin/zsh
 # set 256 colours for nvim
 #set -g default-terminal "screen-256color"
 #set -ga terminal-overrides ',screen-256color:Tc'

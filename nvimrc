@@ -1,23 +1,33 @@
-"Load plugins via vim-plug
+" Load plugins via vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
-"completion
+" completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'fishbullet/deoplete-ruby'
+Plug 'tpope/vim-endwise' " insert 'end' automatically
 
-"colorschemes
+
+" colorschemes
 Plug 'freeo/vim-kalisi'
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 Plug 'iCyMind/NeoSolarized'
 
+" git
+Plug 'tpope/vim-fugitive'
+
+" hud
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
-" deoplete for autocompleteion with TAB
+" deoplete autocompleteion with TAB
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>" 
 
+" deoplete options
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 
@@ -27,28 +37,26 @@ let g:deoplete#sources#clang#clang_header='/usr/lib64/clang'
 
 " jedi completion
 let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
+
+
 " close scratch window aautomatically
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" show line numbers
-set number
 
 " make ',' leader
 let mapleader = ","
 let g:mapleader = ","
 
 " whitespace
-set wrap
-set textwidth=79
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+set wrap  " wrap lines visually ...
+set linebreak  " ... but not in the middle of a word (uses breakat)
+set textwidth=79 " break up lines at 79 characters
+set tabstop=2 " size of tab (that gets translated to spaces via expandtab)
+set shiftwidth=2 " size of indent used by autoindent (/smartindent/cindent)
+set expandtab " use spaces instead of tabs
 
-" reload files when changed externally
-set autoread
+" Enable filetype specific configurations in ~/.config/nvim/filetype.vim
+filetype plugin indent on
 
-autocmd FileType ruby setlocal shiftwidth=2
 
 " delete trailing whitespace on save (python files)
 func! DeleteTrailingWS()
@@ -58,9 +66,15 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
+" show line numbers
+set number
+
 " cursor
 set scrolloff=3
 set matchpairs+=<:>
+
+" reload files when changed externally
+set autoread
 
 " move in wrapped lines
 nnoremap j gj

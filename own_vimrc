@@ -1,1 +1,55 @@
-set nocompatible
+call plug#begin('~/.vim/plugged')
+
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy finder
+Plug 'tpope/vim-surround' " Brackets etc.
+Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-endwise' " Ruby 'end'
+Plug 'scrooloose/syntastic' " syntax checker
+Plug 'vim-airline/vim-airline' " status bar
+Plug 'vim-airline/vim-airline-themes'
+
+" colorschemes
+Plug 'morhetz/gruvbox'
+Plug 'iCyMind/NeoSolarized'
+Plug 'mhartington/oceanic-next' 
+
+call plug#end()
+
+" ',' leader
+let mapleader = ","
+let g:mapleader = ","
+
+" whitespace
+set wrap " visual only
+set linebreak " don't break words (see :h breakat)
+set textwidth=79 " line lenght
+set tabstop=8 " size of tab
+set shiftwidth=4 " indent by autoindent
+set softtabstop=4 " use spaces for tabs
+
+set number " line numbers
+
+set matchpairs+=<:> 
+
+" quicksave and sudo save
+nmap <leader>w :w!<cr>
+
+" theme
+colorscheme gruvbox
+set termguicolors
+set background=dark
+" fix black backgound
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
+
+" move in wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" airline config
+let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
+

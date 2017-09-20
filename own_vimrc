@@ -4,6 +4,10 @@ Plug 'ctrlpvim/ctrlp.vim' " Fuzzy finder
 Plug 'tpope/vim-surround' " Brackets etc.
 Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-endwise' " Ruby 'end'
+Plug 'tpope/vim-bundler' " Bundler integration
+Plug 'tpope/vim-rails' " Rails integration
+Plug 'alvan/vim-closetag' " Close HTML tags
+
 Plug 'scrooloose/syntastic' " syntax checker
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes'
@@ -23,9 +27,9 @@ let g:mapleader = ","
 set wrap " visual only
 set linebreak " don't break words (see :h breakat)
 set textwidth=79 " line lenght
-set tabstop=8 " size of tab
+set tabstop=4 " size of tab
 set shiftwidth=4 " indent by autoindent
-set softtabstop=4 " use spaces for tabs
+set expandtab " insert spaces in place of tabs
 
 set number " line numbers
 
@@ -35,7 +39,7 @@ set matchpairs+=<:>
 nmap <leader>w :w!<cr>
 
 " theme
-colorscheme gruvbox
+colorscheme NeoSolarized
 set termguicolors
 set background=dark
 
@@ -45,7 +49,7 @@ nnoremap k gk
 
 " airline config
 let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
+let g:airline_theme='solarized'
 
 " split right 
 set splitright
@@ -64,3 +68,17 @@ let g:netrw_banner = 0
 
 " size in % of width
 let g:netrw_winsize = 25
+
+" closetag
+let g:closetag_filenames = '*.hmtl, *.xhtml, *.htm, *.html.erb, *.htm.erb'
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
+
+" remove trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+#//e
+    call cursor(l, c)
+endfunction
+

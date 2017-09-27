@@ -32,24 +32,30 @@ set shiftwidth=4 " indent by autoindent
 set expandtab " insert spaces in place of tabs
 
 set number " line numbers
+set relativenumber
+set scrolloff=3
 
 set matchpairs+=<:> 
+" % to jump between 'do' and 'end'
+runtime macros/matchit.vim
 
 " quicksave and sudo save
 nmap <leader>w :w!<cr>
 
 " theme
-colorscheme NeoSolarized
 set termguicolors
 set background=dark
+"colorscheme NeoSolarized
+colorscheme gruvbox
+
+" airline config
+"let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts = 1
 
 " move in wrapped lines
 nnoremap j gj
 nnoremap k gk
-
-" airline config
-let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
 
 " split right 
 set splitright
@@ -82,3 +88,13 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" move between buffers
+nnoremap <silent> <C-b> :silent :bp<CR>
+nnoremap <silent> <C-n> :silent :bn<CR>
+
+" open/close error list
+nnoremap <silent> <leader>L :lclose<CR>
+nnoremap <silent> <leader>O :lopen<CR>
+
+" insert blank line without entering insert mode
+nnoremap <CR> o<Esc>

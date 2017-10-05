@@ -93,3 +93,4 @@ PROMPT="%n@%m%{$fg[blue]%}:%{$fg[red]%}%~%{$fg[red]%}> %{$reset_color%}"
 source /home/alex/powerless/powerless.zsh
 source /home/alex/powerless/utilities.zsh
 
+alias rt="sudo rails test"

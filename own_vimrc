@@ -83,7 +83,7 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 " closetag
-let g:closetag_filenames = '*.hmtl, *.xhtml, *.htm, *.html.erb, *.htm.erb'
+let g:closetag_filenames = '*.html, *.xhtml, *.htm, *.html.erb, *.htm.erb'
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 

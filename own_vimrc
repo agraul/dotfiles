@@ -14,7 +14,6 @@ Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine' " indent guide
 
-
 " colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
@@ -61,6 +60,10 @@ let g:indentLine_setColors = 0
 let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
 nnoremap <leader>ig :IndentLinesToggle<cr>
+
+" autocompletion config
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py' "see ./ycm.py for details
+let g:ycm_python_binary_path = 'python3'
 
 " move in wrapped lines
 nnoremap j gj

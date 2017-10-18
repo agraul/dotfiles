@@ -18,7 +18,7 @@ Plug 'Yggdroot/indentLine' " indent guide
 " colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
-Plug 'mhartington/oceanic-next' 
+Plug 'mhartington/oceanic-next'
 
 call plug#end()
 
@@ -38,7 +38,7 @@ set number " line numbers
 set relativenumber
 set scrolloff=3
 
-set matchpairs+=<:> 
+set matchpairs+=<:>
 " % to jump between 'do' and 'end'
 runtime macros/matchit.vim
 
@@ -66,7 +66,7 @@ nnoremap <leader>ig :IndentLinesToggle<cr>
 nnoremap j gj
 nnoremap k gk
 
-" split right 
+" split right
 set splitright
 " set splitbelow
 
@@ -79,7 +79,7 @@ let g:netrw_banner = 0
 " 2 vertical split
 " 3 new tab
 " 4 prev window
-" let g:netrw_browse_split = 2 
+" let g:netrw_browse_split = 2
 
 " size in % of width
 let g:netrw_winsize = 25
@@ -107,3 +107,10 @@ nnoremap <silent> <leader>O :lopen<CR>
 
 " insert blank line without entering insert mode
 nnoremap <CR> o<Esc>
+
+" Use persistent history.
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile

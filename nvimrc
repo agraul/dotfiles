@@ -6,17 +6,17 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'fishbullet/deoplete-ruby'
-Plug 'tpope/vim-endwise' " insert 'end' automatically
-
 
 " colorschemes
-Plug 'freeo/vim-kalisi'
 Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
-Plug 'iCyMind/NeoSolarized'
 
-" git
-Plug 'tpope/vim-fugitive'
+" tpope
+Plug 'tpope/vim-surround' " Brackets etc.
+Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-endwise' " Ruby 'end'
+Plug 'tpope/vim-bundler' " Bundler integration
+Plug 'tpope/vim-rails' " Rails integration
+Plug 'alvan/vim-closetag' " Close HTML tags
 
 " hud
 Plug 'vim-airline/vim-airline'
@@ -38,6 +38,15 @@ let g:deoplete#sources#clang#clang_header='/usr/lib64/clang'
 " jedi completion
 let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
 
+" closetag
+let g:closetag_filenames = '*.html, *.xhtml, *.htm, *.html.erb, *.htm.erb'
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
+
+" airline config
+"let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts = 1
 
 " close scratch window aautomatically
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -47,16 +56,18 @@ let mapleader = ","
 let g:mapleader = ","
 
 " whitespace
-set wrap  " wrap lines visually ...
-set linebreak  " ... but not in the middle of a word (uses breakat)
-set textwidth=79 " break up lines at 79 characters
-set tabstop=2 " size of tab (that gets translated to spaces via expandtab)
-set shiftwidth=2 " size of indent used by autoindent (/smartindent/cindent)
-set expandtab " use spaces instead of tabs
+set wrap " visual only
+set linebreak " don't break words (see :h breakat)
+set textwidth=79 " line lenght
+set tabstop=4 " size of tab
+set shiftwidth=4 " indent by autoindent
+set expandtab " insert spaces in place of tabs
 
 " Enable filetype specific configurations in ~/.config/nvim/filetype.vim
 filetype plugin indent on
 
+" split on right side
+set splitright
 
 " delete trailing whitespace on save (python files)
 func! DeleteTrailingWS()
@@ -94,6 +105,24 @@ set incsearch
 
 " disable search highlight on <leader><enter>
 map <silent> <leader><cr> :noh<cr>
+
+" move between buffers
+nnoremap <silent> <C-b> :silent :bp<CR>
+nnoremap <silent> <C-n> :silent :bn<CR>
+
+" open/close error list
+nnoremap <silent> <leader>L :lclose<CR>
+nnoremap <silent> <leader>O :lopen<CR>
+
+" insert blank line without entering insert mode
+nnoremap <CR> o<Esc>
+
+" Use persistent history.
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
 
 " theme
 colorscheme gruvbox

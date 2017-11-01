@@ -16,13 +16,21 @@ Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-endwise' " Ruby 'end'
 Plug 'tpope/vim-bundler' " Bundler integration
 Plug 'tpope/vim-rails' " Rails integration
-Plug 'alvan/vim-closetag' " Close HTML tags
 
-" hud
+Plug 'alvan/vim-closetag' " Close HTML tags
+Plug 'nvie/vim-flake8' 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+Plug 'scrooloose/syntastic'
+
+" statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
+
+" open fzf with CTRL-P
+nnoremap <C-p> :FZF <CR>
 
 " deoplete autocompleteion with TAB
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>" 

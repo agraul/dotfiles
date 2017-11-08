@@ -6,6 +6,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'fishbullet/deoplete-ruby'
+Plug 'carlitux/deoplete-ternjs'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -18,7 +19,7 @@ Plug 'tpope/vim-bundler' " Bundler integration
 Plug 'tpope/vim-rails' " Rails integration
 
 Plug 'alvan/vim-closetag' " Close HTML tags
-Plug 'nvie/vim-flake8' 
+Plug 'nvie/vim-flake8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'scrooloose/syntastic'
@@ -103,12 +104,12 @@ nnoremap k gk
 nmap <leader>w :w!<cr>
 
 " sudo save
-command W w !sudo tee % > /dev/null
+cmap W w !sudo tee % > /dev/null
 
 "searching
 set ignorecase
 set smartcase
-"set hlsearch
+set hlsearch
 set incsearch
 
 " disable search highlight on <leader><enter>

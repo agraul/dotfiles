@@ -6,6 +6,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'fishbullet/deoplete-ruby'
+Plug 'carlitux/deoplete-ternjs'
 
 " colorschemes
 Plug 'morhetz/gruvbox'

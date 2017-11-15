@@ -93,4 +93,4 @@ source /home/alex/powerless/utilities.zsh
 alias rt="sudo rails test"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-bindkey -v
+#bindkey -v

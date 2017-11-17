@@ -21,6 +21,7 @@ Plug 'tpope/vim-rails' " Rails integration
 Plug 'alvan/vim-closetag' " Close HTML tags
 Plug 'nvie/vim-flake8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'scrooloose/syntastic'
 
@@ -34,7 +35,7 @@ call plug#end()
 nnoremap <C-p> :FZF <CR>
 
 " deoplete autocompleteion with TAB
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>" 
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " deoplete options
 let g:deoplete#enable_at_startup = 1
@@ -50,7 +51,7 @@ let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
 " closetag
 let g:closetag_filenames = '*.html, *.xhtml, *.htm, *.html.erb, *.htm.erb'
 let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
+let g:closetag_close_shortcut = ',>'
 
 " airline config
 "let g:airline_theme='solarized'
@@ -61,8 +62,8 @@ let g:airline_powerline_fonts = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " make ',' leader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " whitespace
 set wrap " visual only
@@ -147,7 +148,7 @@ noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " create .htm from markdown on save using pandoc
 func! ExportToHTM()
-    silent! execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%") 
-"    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%") 
+    silent! execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%")
+"    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%")
 endfunc
 "autocmd BufWritePost *.md :call ExportToHTM()

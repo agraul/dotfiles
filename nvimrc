@@ -105,7 +105,7 @@ nnoremap k gk
 nmap <leader>w :w!<cr>
 
 " sudo save
-cmap W w !sudo tee % > /dev/null
+" cmap W w !sudo tee % > /dev/null
 
 "searching
 set ignorecase
@@ -117,8 +117,8 @@ set incsearch
 map <silent> <leader><cr> :noh<cr>
 
 " move between buffers
-nnoremap <silent> <C-b> :silent :bp<CR>
-nnoremap <silent> <C-n> :silent :bn<CR>
+"nnoremap <silent> <C-b> :silent :bp<CR>
+"nnoremap <silent> <C-n> :silent :bn<CR>
 
 " open/close error list
 nnoremap <silent> <leader>L :lclose<CR>

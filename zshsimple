@@ -83,14 +83,12 @@ alias pcscdoff="sudo systemctl stop pcscd"
 
 #Prompt
 autoload -Uz colors && colors
-# archwiki example PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%# "
-
-
 PROMPT="%n@%m%{$fg[blue]%}:%{$fg[red]%}%~%{$fg[red]%}> %{$reset_color%}"
-source /home/alex/powerless/powerless.zsh
-source /home/alex/powerless/utilities.zsh
+
+# this plugin overrides the prompt above
+source /home/alex/powerless/powerless.zsh false
+source /home/alex/powerless/utilities.zsh true
 
 alias rt="sudo rails test"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-bindkey -v

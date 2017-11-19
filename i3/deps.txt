@@ -2,3 +2,4 @@ dependencies:
 i3-gaps
 feh
 compton
+i3-gnome from github

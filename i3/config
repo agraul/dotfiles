@@ -1,0 +1,145 @@
+set $mod Mod4
+focus_follows_mouse no
+
+font pango: Noto Sans 11
+exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/wallhaven-570937.jpg
+
+# autostart
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id /usr/bin/setxkbmap -layout "us" -variant "altgr-intl" -option "caps:ctrl_modifier"
+exec compton &
+exec xset -b
+
+floating_modifier $mod
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym --release $mod+x exec --no-startup-id import /tmp/screenshot.png
+
+# start applications
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
+bindsym $mod+d exec dmenu_run
+
+# manage windows
+bindsym $mod+Shift+q kill
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+i split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# workspaces
+set $ws1 "1:I"
+set $ws2 "2:II"
+set $ws3 "3:III"
+set $ws4 "4:IV"
+set $ws5 "5:V"
+set $ws6 "6:VI"
+set $ws7 "7:VII"
+set $ws8 "8:VIII"
+set $ws9 "9:IX"
+set $ws10 "10:X"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# resizing
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# colors
+set $bg-color            #282828
+set $inactive-bg-color   #928374
+set $fg-color            #83a598
+set $inactive-text-color #fabd2f
+set $urgent-bg-color     #fb4934
+set $text-color          #fabd2f
+set $urgent-text-color   #cc241d
+# window colors
+#                       border              background          text                 indicator
+client.focused          $fg-color           $fg-color           $text-color          $fg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color $bg-color
+client.urgent           $fg-color           $urgent-bg-color    $fg-color            $bg-color
+
+# Start i3blocks to display a workspace bar
+bar {
+        status_command i3status
+        tray_output false
+        position top
+        strip_workspace_numbers yes
+        colors {
+                statusline $text-color
+                background $bg-color
+                separator #757575
+                #                   border              background          text
+                focused_workspace   $fg-color           $bg-color           $text-color
+                inactive_workspace  $bg-color  $bg-color  $inactive-text-color
+                urgent_workspace    $urgent-bg-color    $urgent-bg-color    $fg-color
+        }
+}
+
+# Audio controls
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media controls via dbus
+bindsym XF86AudioPlay exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause #play/pause
+bindsym XF86AudioNext exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next #next
+bindsym XF86AudioPrev exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous #previous
+bindsym XF86AudioStop exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop #stop
+
+# gaps
+for_window [class="^.*"] border pixel 5
+new_window pixel 5
+gaps outer 0
+gaps inner 9

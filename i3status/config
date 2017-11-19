@@ -1,0 +1,39 @@
+general {
+    output_format = "i3bar"
+    colors = false
+    interval = 5
+}
+
+order += "disk /"
+order += "ethernet eno1"
+order += "load"
+order += "tztime local"
+
+
+ethernet eno1 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "ETH: %ip (%speed)"
+        format_down = "ETH: down"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+
+tztime local {
+        format = "%H:%M:%S %d.%m.%Y"
+}
+
+load {
+        format = "load: %1min, %5min, %15min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+        format = "%free"
+}

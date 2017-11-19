@@ -1,0 +1,4 @@
+dependencies:
+i3-gaps
+feh
+compton

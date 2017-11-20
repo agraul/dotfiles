@@ -1,7 +1,11 @@
 #!/bin/bash
 
-if synclient -l | grep "TouchpadOff .*=.*0" ; then
-    synclient TouchpadOff=1 ;
+TOUCHPAD=11
+DISABLED_FILE=/tmp/touchpad_disabled
+if [ -e $DISABLED_FILE ] ; then
+    xinput enable $TOUCHPAD;
+    rm $DISABLED_FILE;
 else
-    synclient TouchpadOff=0 ;
+    xinput disable $TOUCHPAD;
+    touch $DISABLED_FILE;
 fi

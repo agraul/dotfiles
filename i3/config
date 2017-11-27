@@ -2,7 +2,7 @@ set $mod Mod4
 focus_follows_mouse no
 
 font pango: Noto Sans 11
-exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/wallhaven-570937.jpg
+exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/wallhaven-551641.jpg
 
 # autostart
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
@@ -16,6 +16,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym --release $mod+x exec --no-startup-id import /tmp/screenshot.png
+bindsym $mod+Shift+x exec /home/alex/bin/lock.sh
 
 # start applications
 #bindsym $mod+Return exec i3-sensible-terminal
@@ -110,7 +111,7 @@ client.urgent           $fg-color           $urgent-bg-color    $fg-color       
 
 # Start i3blocks to display a workspace bar
 bar {
-        status_command i3status
+        status_command i3status --config=/home/alex/.config/i3status/config_work
         tray_output false
         position top
         strip_workspace_numbers yes

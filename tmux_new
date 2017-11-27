@@ -1,15 +1,15 @@
 # set ZSH as default shell
 set-option -g default-shell /usr/bin/zsh
-# set 256 colours for nvim
-#set -g default-terminal "screen-256color"
-#set -ga terminal-overrides ',screen-256color:Tc'
+
+# true colours
+set-option -ga terminal-overrides ',xterm-256color:Tc'
 
 # escape time for nvim
 set-option -sg escape-time 10
 
 # set default indices to 1
-set-option -g base-index 1
-setw -g pane-base-index 1
+#set-option -g base-index 1
+#setw -g pane-base-index 1
 
 # rebind prefix to C-a
 unbind C-b
@@ -48,6 +48,10 @@ bind  -r J resize-pane -D
 bind  -r K resize-pane -U 
 bind  -r L resize-pane -R 
 
+# separator
+set -g pane-active-border-fg white
+set -g pane-border-fg green
+
 # statusbar
 set-window-option -g status-left " #S "
 set-window-option -g status-left-fg black
@@ -63,9 +67,11 @@ set-window-option -g window-status-current-format " #I: #W "
 set-window-option -g window-status-current-fg white
 set-window-option -g window-status-current-bg black
 
-set-window-option -g status-bg colour245 
+set-window-option -g status-bg white 
+set-window-option -g status-fg black 
 
 # ignore smaller client size
 setw -g aggressive-resize on
 # create a session if none found to attach via "tmux attach"
 new-session -n $HOST
+

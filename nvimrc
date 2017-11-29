@@ -24,6 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
 
 " statusline
 Plug 'vim-airline/vim-airline'
@@ -33,9 +34,14 @@ call plug#end()
 
 " open fzf with CTRL-P
 nnoremap <C-p> :FZF <CR>
+nnoremap <C-\> :Tags <CR>
+nnoremap <F8> :TagbarToggle<CR>
 
 " deoplete autocompleteion with TAB
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Tagbar
+let g:tagbar_autoclose = 1
 
 " deoplete options
 let g:deoplete#enable_at_startup = 1

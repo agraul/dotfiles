@@ -10,6 +10,8 @@ Plug 'carlitux/deoplete-ternjs'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'archseer/colibri.vim'
+Plug 'nightsense/office'
 
 " tpope
 Plug 'tpope/vim-surround' " Brackets etc.
@@ -34,11 +36,27 @@ call plug#end()
 
 " open fzf with CTRL-P
 nnoremap <C-p> :FZF <CR>
+nnoremap <leader>[ :Buffers <CR>
+nnoremap <leader>p :Find 
 nnoremap <C-\> :Tags <CR>
 nnoremap <F8> :TagbarToggle<CR>
 
 " deoplete autocompleteion with TAB
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" FZF + rg
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " Tagbar
 let g:tagbar_autoclose = 1
@@ -74,7 +92,7 @@ let g:mapleader = " "
 " whitespace
 set wrap " visual only
 set linebreak " don't break words (see :h breakat)
-set textwidth=79 " line lenght
+set textwidth=79 " line length
 set tabstop=4 " size of tab
 set shiftwidth=4 " indent by autoindent
 set expandtab " insert spaces in place of tabs
@@ -131,7 +149,7 @@ nnoremap <silent> <leader>L :lclose<CR>
 nnoremap <silent> <leader>O :lopen<CR>
 
 " insert blank line without entering insert mode
-nnoremap <CR> o<Esc>
+" nnoremap <leader><CR> o<Esc>
 
 " Use persistent history.
 if !isdirectory("/tmp/.vim-undo-dir")
@@ -158,3 +176,4 @@ func! ExportToHTM()
 "    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%")
 endfunc
 "autocmd BufWritePost *.md :call ExportToHTM()
+"

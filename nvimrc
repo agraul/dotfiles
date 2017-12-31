@@ -81,8 +81,10 @@ let g:closetag_close_shortcut = ',>'
 "let g:airline_theme='solarized'
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
-" close scratch window aautomatically
+" close scratch window automatically
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " make ',' leader

@@ -5,7 +5,7 @@ Name=Firefox
 GenericName=Web Browser
 Comment=Web Browser
 TryExec=firefox
-Exec=env "GTK_THEME=adwaita:light" firefox %u
+Exec=env "GTK_THEME=Geeko" firefox %u
 Icon=firefox
 Terminal=false
 StartupNotify=true

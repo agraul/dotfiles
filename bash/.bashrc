@@ -113,3 +113,4 @@ LGRAY='\[\033[0;37m\]'
 alias vncmain="x11vnc -repeat -shared -viewonly -clip xinerama1"
 
 export PATH=$PATH:~/trollolo/bin
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

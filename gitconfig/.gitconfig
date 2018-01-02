@@ -11,7 +11,7 @@
   dump = cat-file -p
 [core]
 	pager = less
-	editor = vim
+	editor = nvim
 [color]
 	ui = auto
 [push]

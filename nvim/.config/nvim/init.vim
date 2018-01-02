@@ -83,11 +83,13 @@ let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_left_alt_sep='|'
+let g:airline_right_alt_sep='|'
 
 " close scratch window automatically
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" make ',' leader
+" make '<space>' leader
 let mapleader = " "
 let g:mapleader = " "
 
@@ -101,6 +103,12 @@ set expandtab " insert spaces in place of tabs
 
 " Enable filetype specific configurations in ~/.config/nvim/filetype.vim
 filetype plugin indent on
+
+" netrw configuration
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+" % of screen that netrw uses
+let g:netrw_winsize = 30
 
 " split on right side
 set splitright
@@ -142,16 +150,10 @@ set incsearch
 " disable search highlight on <leader><enter>
 map <silent> <leader><cr> :noh<cr>
 
-" move between buffers
-"nnoremap <silent> <C-b> :silent :bp<CR>
-"nnoremap <silent> <C-n> :silent :bn<CR>
-
 " open/close error list
 nnoremap <silent> <leader>L :lclose<CR>
 nnoremap <silent> <leader>O :lopen<CR>
 
-" insert blank line without entering insert mode
-" nnoremap <leader><CR> o<Esc>
 
 " Use persistent history.
 if !isdirectory("/tmp/.vim-undo-dir")
@@ -174,8 +176,6 @@ noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " create .htm from markdown on save using pandoc
 func! ExportToHTM()
-    silent! execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%")
-"    execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".htm " . expand("%")
-endfunc
+    silent! execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".html " . expand("%")
+endfunction
 "autocmd BufWritePost *.md :call ExportToHTM()
-"

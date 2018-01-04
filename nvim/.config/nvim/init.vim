@@ -10,7 +10,6 @@ Plug 'carlitux/deoplete-ternjs'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'archseer/colibri.vim'
 Plug 'nightsense/office'
 
 " tpope
@@ -20,13 +19,13 @@ Plug 'tpope/vim-endwise' " Ruby 'end'
 Plug 'tpope/vim-bundler' " Bundler integration
 Plug 'tpope/vim-rails' " Rails integration
 
-Plug 'alvan/vim-closetag' " Close HTML tags
 Plug 'nvie/vim-flake8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
+" replace this with :make ?
 Plug 'scrooloose/syntastic'
-Plug 'majutsushi/tagbar'
 
 " statusline
 Plug 'vim-airline/vim-airline'
@@ -37,7 +36,7 @@ call plug#end()
 " open fzf with CTRL-P
 nnoremap <C-p> :FZF <CR>
 nnoremap <leader>[ :Buffers <CR>
-nnoremap <leader>p :Find 
+nnoremap <leader>p :Find <CR>
 nnoremap <C-\> :Tags <CR>
 nnoremap <F8> :TagbarToggle<CR>
 
@@ -58,9 +57,6 @@ inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-" Tagbar
-let g:tagbar_autoclose = 1
-
 " deoplete options
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
@@ -72,10 +68,6 @@ let g:deoplete#sources#clang#clang_header='/usr/lib64/clang'
 " jedi completion
 let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
 
-" closetag
-let g:closetag_filenames = '*.html, *.xhtml, *.htm, *.html.erb, *.htm.erb'
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = ',>'
 
 " airline config
 "let g:airline_theme='solarized'
@@ -85,9 +77,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_left_alt_sep='|'
 let g:airline_right_alt_sep='|'
-
-" close scratch window automatically
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline#extensions#branch#empty_message = 'NO GIT'
 
 " make '<space>' leader
 let mapleader = " "
@@ -101,7 +92,7 @@ set tabstop=4 " size of tab
 set shiftwidth=4 " indent by autoindent
 set expandtab " insert spaces in place of tabs
 
-" Enable filetype specific configurations in ~/.config/nvim/filetype.vim
+" Enable filetype specific configurations in ~/.config/nvim/$filetype.vim
 filetype plugin indent on
 
 " netrw configuration
@@ -113,16 +104,9 @@ let g:netrw_winsize = 30
 " split on right side
 set splitright
 
-" delete trailing whitespace on save (python files)
-func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-
-" show line numbers
+" show line numbers vim-numbertoggle switches between relative and absolute
 set number
+set relativenumber
 
 " cursor
 set scrolloff=3
@@ -139,13 +123,21 @@ nnoremap k gk
 nmap <leader>w :w!<cr>
 
 " sudo save
-" cmap W w !sudo tee % > /dev/null
+cmap w!! w !sudo tee % > /dev/null
 
-"searching
+" yank and paste from clipboard
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+
+" searching
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
+" quick replace (word under cursor "cword")
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
+nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
 
 " disable search highlight on <leader><enter>
 map <silent> <leader><cr> :noh<cr>
@@ -174,8 +166,19 @@ au VimLeave * set guicursor=a:block
 " fix Windows ^M (<leader>m)
 noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" create .htm from markdown on save using pandoc
-func! ExportToHTM()
-    silent! execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".html " . expand("%")
+" functions
+
+" create .html from markdown using pandoc
+function! MDToHTML()
+    silent execute "!pandoc -f commonmark -t html -o " . expand("%:r") . ".html " . expand("%")
 endfunction
-"autocmd BufWritePost *.md :call ExportToHTM()
+command! MDToHTML call MDToHTML()
+
+" delete trailing whitespace
+function! DeleteTrailingWS()
+    let l:saved_winview = winsaveview()
+    keeppatterns %s/\v\s+$//e
+    call winrestview(l:saved_winview)
+endfunction
+command! DeleteTrailingWS call DeleteTrailingWS()
+

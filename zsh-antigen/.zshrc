@@ -49,6 +49,9 @@ alias rt='sudo rails test'
 alias pcscdon="sudo systemctl start pcscd"
 alias pcscdoff="sudo systemctl stop pcscd"
 
+# easy c++ compiling
+alias cppcompile="g++ -Wall -Wextra -Wundef -Wfloat-equal -g -o a.o main.cpp"
+
 # -------------------------------------------------------------
 # sourcing other things
 # -------------------------------------------------------------

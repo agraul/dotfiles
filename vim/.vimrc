@@ -7,7 +7,7 @@ Plug 'tpope/vim-endwise' " Ruby 'end'
 Plug 'tpope/vim-bundler' " Bundler integration
 Plug 'tpope/vim-rails' " Rails integration
 Plug 'alvan/vim-closetag' " Close HTML tags
-Plug 'Valloric/YouCompleteMe' " Autocomplete
+" Plug 'Valloric/YouCompleteMe' " Autocomplete
 
 Plug 'scrooloose/syntastic' " syntax checker
 Plug 'vim-airline/vim-airline' " status bar
